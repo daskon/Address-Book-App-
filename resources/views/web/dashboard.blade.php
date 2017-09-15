@@ -25,17 +25,17 @@
                   </div>
                   @if (Auth::user()->is_admin == 1) 
                     <div class="col-md-3">
-                       <a class="btn btn-info" href="{{ url('all_details') }}">View User Details</a>
+                       <a class="btn btn-info" href="{{ url('api/show') }}">View User Details</a>
                     </div>
                   @else
                     <div class="col-md-3">
-                       <a class="btn btn-info" href="{{ url('create_details') }}">Add Details</a>
+                       <a class="btn btn-info" href="{{ url('addbook/create') }}">Add Details</a>
                     </div>
                     <div class="col-md-3">
                         <a class="btn btn-info" href="{{ url('addbook/'.Auth::user()->id.'/edit') }}">Update Details</a>
                     </div>
                     <div class="col-md-3">
-                        <a class="btn btn-info" href="{{ url('show_details') }}">View Details</a>
+                        <a class="btn btn-info" href="{{ url('addbook/show') }}">View Details</a>
                     </div>
                   @endif             
                 </div>

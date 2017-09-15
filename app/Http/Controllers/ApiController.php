@@ -42,7 +42,7 @@ class ApiController extends Controller
         return back()->with("status","Your details has been recorded");
     }
 
-    public function UpdateDetails(Request $request){
+    public function update(Request $request){
 
        $this->validate($request,[
             'passport_number' => 'required|max:15',
@@ -64,5 +64,13 @@ class ApiController extends Controller
         ]);
 
         return redirect()->back()->with("status","Your details has been updated successfuly");
+    }
+
+    public function show(){
+
+         $address = DB::table('user_addresses')->paginate(4);
+
+         return view('web.AllDetails',['address' => $address] );
+         
     }
 }

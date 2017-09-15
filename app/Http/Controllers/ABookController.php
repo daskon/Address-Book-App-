@@ -26,10 +26,10 @@ class ABookController extends Controller
       }
    }
 
-   public function destroy($id){
+   public function destroy(){
 
-        UserDetails::where('user_id', $id)->delete();
-        UserAddresses::where('user_id', $id)->delete();
+        UserDetails::where('user_id', Auth::user()->id)->delete();
+        UserAddresses::where('user_id', Auth::user()->id)->delete();
 
         return back()->with("status","Your details has been deleted successfuly");
 
@@ -48,4 +48,18 @@ class ABookController extends Controller
            return redirect()->back()->with("status","You should fill your details before "); 
         }
     }
+
+   public function show(){
+
+      if (UserDetails::where('user_id', '=', Auth::user()->id)->count() > 0) {
+            $userd = UserDetails::where('user_id', Auth::user()->id)->firstOrFail();
+            $address = UserAddresses::where('user_id', Auth::user()->id)->firstOrFail();
+
+            return view('web.ShowDetails', compact('userd','address') );
+        }
+        else{
+           return redirect()->back()->with("status","You should fill your details before "); 
+        }
+
+   }
 }
