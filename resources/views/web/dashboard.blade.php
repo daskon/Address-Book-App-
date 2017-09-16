@@ -29,13 +29,13 @@
                     </div>
                   @else
                     <div class="col-md-3">
-                       <a class="btn btn-info" href="{{ url('addbook/create') }}">Add Details</a>
+                       <a class="btn btn-info" href="{{ url('api/addbook/create') }}">Add Details</a>
                     </div>
                     <div class="col-md-3">
-                        <a class="btn btn-info" href="{{ url('addbook/'.Auth::user()->id.'/edit') }}">Update Details</a>
+                        <a class="btn btn-info" href="{{ url('api/addbook/'.Auth::user()->id.'/edit') }}">Update Details</a>
                     </div>
                     <div class="col-md-3">
-                        <a class="btn btn-info" href="{{ url('addbook/show') }}">View Details</a>
+                        <a class="btn btn-info" href="{{ url('api/addbook/show') }}">View Details</a>
                     </div>
                   @endif             
                 </div>

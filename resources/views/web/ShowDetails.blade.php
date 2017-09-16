@@ -42,7 +42,7 @@
                      </div>
                     <br/>
                     <div class="col-md-3">
-                        <a class="btn btn-info" href="{{ url('addbook/destroy') }}" onclick="return confirm('Are you sure?')">
+                        <a class="btn btn-info" href="{{ url('api/addbook/destroy') }}" onclick="return confirm('Are you sure?')">
                             Delete Details
                         </a>
                     </div>            

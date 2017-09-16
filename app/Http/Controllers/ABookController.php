@@ -17,6 +17,10 @@ class ABookController extends Controller
 
    public function create(){
 
+      //if (!$books) {
+      //      throw new HttpException(400, "Invalid data");
+      //}
+
       if (UserDetails::where('user_id', '=', Auth::user()->id)->count() > 0) {
            return redirect()->back()->with("status","You have alredy filled details ");
       }
