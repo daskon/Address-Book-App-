@@ -35,7 +35,7 @@
                         <a class="btn btn-info" href="{{ url('api/addbook/'.Auth::user()->id.'/edit') }}">Update Details</a>
                     </div>
                     <div class="col-md-3">
-                        <a class="btn btn-info" href="{{ url('api/addbook/show') }}">View Details</a>
+                        <a class="btn btn-info" href="{{ url('api/addbook/'.Auth::user()->id) }}">View Details</a>
                     </div>
                   @endif             
                 </div>

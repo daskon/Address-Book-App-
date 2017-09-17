@@ -13,16 +13,16 @@ use Illuminate\Http\Request;
 |
 */
 
-//Route::middleware('auth:api')->get('/user', function (Request $request) {
-  //  return $request->user();
-//});
+Route::middleware('auth:api')->get('/user', function (Request $request) {
+    return $request->user();
+});
 
+Route::middleware('api')->group(function () {
+  
+   Route::resource('addbook','ABookController',['only' => ['index','create','destroy','edit','show']]);
 
- Route::resource('addbook','ABookController',['only' => ['index','create','destroy','edit','show']]);
+   Route::resource('apiroute','ApiController', ['only' => ['store','update','show']]);
 
- Route::resource('apiroute','ApiController', ['only' => ['store','update','show']]);
+});
 
-    //Route::get('/api/books/{id}', 'BookController@show');
-    //Route::post('/api/books', 'BookController@store');
-    //Route::put('/api/books/{id}', 'BookController@update');
-    //Route::delete('/api/books/{id}', 'BookController@destroy');
+    

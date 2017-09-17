@@ -53,11 +53,11 @@ class ABookController extends Controller
         }
     }
 
-   public function show(){
+   public function show($id){
 
-      if (UserDetails::where('user_id', '=', Auth::user()->id)->count() > 0) {
-            $userd = UserDetails::where('user_id', Auth::user()->id)->firstOrFail();
-            $address = UserAddresses::where('user_id', Auth::user()->id)->firstOrFail();
+      if (UserDetails::where('user_id', '=', $id)->count() > 0) {
+            $userd = UserDetails::where('user_id', $id)->firstOrFail();
+            $address = UserAddresses::where('user_id', $id)->firstOrFail();
 
             return view('web.ShowDetails', compact('userd','address') );
         }

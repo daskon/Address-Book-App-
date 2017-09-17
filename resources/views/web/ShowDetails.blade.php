@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">User {{ Auth::user()->name }} Details| 
+                <div class="panel-heading">User Details| 
                 <a href="{{ url('/dashboard') }}">Back</a>
                 </div>
 
