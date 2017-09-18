@@ -11,10 +11,12 @@ use App\UserDetails;
 
 class ABookController extends Controller
 {
+   //display dashboard
    public function index(){
        return view('web.dashboard');
    }
 
+   //display user details entering form
    public function create(){
 
       //if (!$books) {
@@ -30,15 +32,7 @@ class ABookController extends Controller
       }
    }
 
-   public function destroy(){
-
-        UserDetails::where('user_id', Auth::user()->id)->delete();
-        UserAddresses::where('user_id', Auth::user()->id)->delete();
-
-        return back()->with("status","Your details has been deleted successfuly");
-
-   }
-
+   //display already inserted data for edit
    public function edit($id){
 
     if (UserDetails::where('user_id', '=', $id)->count() > 0) {
@@ -53,6 +47,7 @@ class ABookController extends Controller
         }
     }
 
+   //view already inserted data
    public function show($id){
 
       if (UserDetails::where('user_id', '=', $id)->count() > 0) {

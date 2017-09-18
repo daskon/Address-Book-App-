@@ -11,6 +11,7 @@ use App\UserDetails;
 
 class ApiController extends Controller
 {
+    //insert new record into database
     public function store(Request $request){
 
                 $this->validate($request,[
@@ -42,6 +43,7 @@ class ApiController extends Controller
         return back()->with("status","Your details has been recorded");
     }
 
+    //update details
     public function update(Request $request){
 
        $this->validate($request,[
@@ -66,6 +68,7 @@ class ApiController extends Controller
         return redirect()->back()->with("status","Your details has been updated successfuly");
     }
 
+    //show all the user details to administrator
     public function show(){
 
          $address = DB::table('user_addresses')->paginate(4);
@@ -73,4 +76,14 @@ class ApiController extends Controller
          return view('web.AllDetails',['address' => $address] );
          
     }
+ 
+    //delete user details
+    public function destroy(){
+
+        UserDetails::where('user_id', Auth::user()->id)->delete();
+        UserAddresses::where('user_id', Auth::user()->id)->delete();
+
+        return back()->with("status","Your details has been deleted successfuly");
+
+   }
 }

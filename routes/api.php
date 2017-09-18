@@ -19,9 +19,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::middleware('api')->group(function () {
   
-   Route::resource('addbook','ABookController',['only' => ['index','create','destroy','edit','show']]);
-
-   Route::resource('apiroute','ApiController', ['only' => ['store','update','show']]);
+   Route::resource('apiroute','ApiController', ['only' => ['store','update','show','destroy']]);
 
 });
 

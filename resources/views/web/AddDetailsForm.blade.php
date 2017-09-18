@@ -24,7 +24,7 @@
                             </div>
                             <div class="media-body">
 
-                            <form class="form-horizontal" method="POST" action="{{ url('api/store') }}" enctype="multipart/form-data">
+                            <form class="form-horizontal" method="POST" action="{{ url('api/apiroute/store') }}" enctype="multipart/form-data">
                                  {{csrf_field()}}
                                  
                                 <div class="form-group{{ $errors->has('passport_number') ? ' has-error' : '' }}">
