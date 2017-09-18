@@ -24,9 +24,8 @@
                             </div>
                             <div class="media-body">
 
-                            <form class="form-horizontal" method="POST" action="{{ url('api/apiroute/update') }}" >
-                                 {{csrf_field()}}
-
+                            <form class="form-horizontal" action="{{ url('api/apiroute/update') }}" enctype="multipart/form-data">
+                                 
                                 <div class="form-group{{ $errors->has('passport_number') ? ' has-error' : '' }}">
                                 <label for="passport_number" class="col-md-4 control-label">Passport No</label>
 

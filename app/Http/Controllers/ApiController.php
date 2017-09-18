@@ -46,7 +46,7 @@ class ApiController extends Controller
     //update details
     public function update(Request $request){
 
-       $this->validate($request,[
+        $this->validate($request,[
             'passport_number' => 'required|max:15',
             'phone_number' => 'required|numeric|min:10',
             'address1' => 'required',
