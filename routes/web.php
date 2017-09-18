@@ -18,4 +18,5 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/dashboard', 'ABookController@index')->name('dashboard');
+
 Route::resource('addbook','ABookController',['only' => ['index','create','edit','show']]);
