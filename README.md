@@ -1,5 +1,5 @@
 
-This is the system for mange information of people whic include authentication system to trac each user activities. below are the few snapshots of this system. 
+This is the system for mange information of people which include authentication to track each users activities. Below are the few snapshots of this system. 
 
 This app was created by using Laravel 5.4 with mysql database. 
 
